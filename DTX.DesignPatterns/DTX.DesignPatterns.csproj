@@ -42,7 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreationalPattern.cs" />
     <Compile Include="EntryPoint.cs" />
+    <Compile Include="Factory Method\FactoryMethod.cs" />
+    <Compile Include="Pattern.cs" />
     <Compile Include="PatternFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
