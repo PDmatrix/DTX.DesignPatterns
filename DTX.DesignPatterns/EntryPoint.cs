@@ -6,8 +6,8 @@ namespace DTX.DesignPatterns
     {
         private static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            Console.ReadKey();
+
+            var a = PatternFactory.Create(args);
         }
     }
 }
