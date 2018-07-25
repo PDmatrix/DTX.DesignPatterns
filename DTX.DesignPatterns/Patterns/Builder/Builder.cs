@@ -5,9 +5,11 @@ namespace DTX.DesignPatterns.Patterns.Builder
 {
     public class Builder : CreationalPattern
     {
+        private const string PatternNameStr = "Builder";
+
         public Builder(IDictionary<string, string> args)
         {
-            
+            PatternName = PatternNameStr;
         }
 
         public override void Excecute()

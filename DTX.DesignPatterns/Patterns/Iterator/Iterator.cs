@@ -5,9 +5,11 @@ namespace DTX.DesignPatterns.Patterns.Iterator
 {
     public class Iterator : BehavioralPattern
     {
+        private const string PatternNameStr = "Iterator";
+
         public Iterator(IDictionary<string, string> args)
         {
-
+            PatternName = PatternNameStr;
         }
 
         public override void Excecute()

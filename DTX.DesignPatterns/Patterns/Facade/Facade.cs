@@ -5,9 +5,11 @@ namespace DTX.DesignPatterns.Patterns.Facade
 {
     public class Facade : StructuralPattern
     {
+        private const string PatternNameStr = "Facade";
+
         public Facade(IDictionary<string, string> args)
         {
-
+            PatternName = PatternNameStr;
         }
 
         public override void Excecute()

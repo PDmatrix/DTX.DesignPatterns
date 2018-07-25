@@ -6,9 +6,11 @@ namespace DTX.DesignPatterns.Patterns.Prototype
 {
     public class Prototype : CreationalPattern
     {
+        private const string PatternNameStr = "Prototype";
+
         public Prototype(IDictionary<string, string> args)
         {
-            
+            PatternName = PatternNameStr;
         }
 
         public override void Excecute()

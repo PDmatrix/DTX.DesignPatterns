@@ -5,9 +5,11 @@ namespace DTX.DesignPatterns.Patterns.Proxy
 {
     public class Proxy : StructuralPattern
     {
+        private const string PatternNameStr = "Proxy";
+
         public Proxy(IDictionary<string, string> args)
         {
-
+            PatternName = PatternNameStr;
         }
 
         public override void Excecute()

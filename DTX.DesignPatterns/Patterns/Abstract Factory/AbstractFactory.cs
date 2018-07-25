@@ -5,9 +5,11 @@ namespace DTX.DesignPatterns.Patterns.Abstract_Factory
 {
     public class AbstractFactory : CreationalPattern
     {
+        private const string PatternNameStr = "Abstract factory";
+
         public AbstractFactory(IDictionary<string, string> args)
         {
-            
+            PatternName = PatternNameStr;
         }
 
         public override void Excecute()

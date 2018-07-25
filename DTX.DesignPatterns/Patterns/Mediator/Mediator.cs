@@ -5,9 +5,11 @@ namespace DTX.DesignPatterns.Patterns.Mediator
 {
     public class Mediator : BehavioralPattern
     {
+        private const string PatternNameStr = "Mediator";
+
         public Mediator(IDictionary<string, string> args)
         {
-
+            PatternName = PatternNameStr;
         }
 
         public override void Excecute()

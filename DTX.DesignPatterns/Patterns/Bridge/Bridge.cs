@@ -5,9 +5,11 @@ namespace DTX.DesignPatterns.Patterns.Bridge
 {
     public class Bridge : StructuralPattern
     {
+        private const string PatternNameStr = "Bridge";
+
         public Bridge(IDictionary<string, string> args)
         {
-
+            PatternName = PatternNameStr;
         }
 
         public override void Excecute()

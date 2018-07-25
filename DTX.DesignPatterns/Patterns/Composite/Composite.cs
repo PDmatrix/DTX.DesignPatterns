@@ -5,9 +5,11 @@ namespace DTX.DesignPatterns.Patterns.Composite
 {
     public class Composite : StructuralPattern
     {
+        private const string PatternNameStr = "Composite";
+
         public Composite(IDictionary<string, string> args)
         {
-
+            PatternName = PatternNameStr;
         }
 
         public override void Excecute()

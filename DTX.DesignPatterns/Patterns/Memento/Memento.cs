@@ -5,9 +5,11 @@ namespace DTX.DesignPatterns.Patterns.Memento
 {
     public class Memento : BehavioralPattern
     {
+        private const string PatternNameStr = "Memento";
+
         public Memento(IDictionary<string, string> args)
         {
-
+            PatternName = PatternNameStr;
         }
 
         public override void Excecute()

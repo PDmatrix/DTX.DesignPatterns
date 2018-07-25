@@ -5,9 +5,11 @@ namespace DTX.DesignPatterns.Patterns.Decorator
 {
     public class Decorator : StructuralPattern
     {
+        private const string PatternNameStr = "Decorator";
+
         public Decorator(IDictionary<string, string> args)
         {
-
+            PatternName = PatternNameStr;
         }
 
         public override void Excecute()

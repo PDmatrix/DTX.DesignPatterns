@@ -6,9 +6,11 @@ namespace DTX.DesignPatterns.Patterns.Factory_Method
 {
     public class FactoryMethod : CreationalPattern
     {
+        private const string PatternNameStr = "Factory method";
+
         public FactoryMethod(IDictionary<string, string> args)
         {
-            
+            PatternName = PatternNameStr;
         }
 
         public override void Excecute()
