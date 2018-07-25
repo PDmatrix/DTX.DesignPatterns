@@ -12,8 +12,8 @@ namespace DTX.DesignPatterns
             var dictionary = ParseArgs(args);
             var pattern = PatternFactory.Create(dictionary);
             Console.WriteLine(pattern.PatternType);
-            //Console.WriteLine(pattern.Description());
-            //pattern.Excecute();
+            Console.WriteLine(pattern.Description());
+            pattern.Excecute();
             Console.ReadKey();
         }
 
