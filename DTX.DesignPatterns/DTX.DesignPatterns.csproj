@@ -42,15 +42,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CreationalPattern.cs" />
+    <Compile Include="Definition\PatternTypes\BehavioralPattern.cs" />
+    <Compile Include="Definition\PatternTypes\CreationalPattern.cs" />
+    <Compile Include="Definition\PatternTypes\StructuralPattern.cs" />
     <Compile Include="EntryPoint.cs" />
-    <Compile Include="Factory Method\FactoryMethod.cs" />
-    <Compile Include="Pattern.cs" />
-    <Compile Include="PatternFactory.cs" />
+    <Compile Include="Patterns\Abstract Factory\AbstractFactory.cs" />
+    <Compile Include="Patterns\Adapter\Adapter.cs" />
+    <Compile Include="Patterns\Bridge\Bridge.cs" />
+    <Compile Include="Patterns\Builder\Builder.cs" />
+    <Compile Include="Patterns\Chain of Responsibility\ChainOfResponsibility.cs" />
+    <Compile Include="Patterns\Command\Command.cs" />
+    <Compile Include="Patterns\Composite\Composite.cs" />
+    <Compile Include="Patterns\Decorator\Decorator.cs" />
+    <Compile Include="Patterns\Facade\Facade.cs" />
+    <Compile Include="Patterns\Factory Method\FactoryMethod.cs" />
+    <Compile Include="Definition\Pattern.cs" />
+    <Compile Include="Definition\PatternFactory.cs" />
+    <Compile Include="Patterns\Flyweight\Flyweight.cs" />
+    <Compile Include="Patterns\Iterator\Iterator.cs" />
+    <Compile Include="Patterns\Mediator\Mediator.cs" />
+    <Compile Include="Patterns\Memento\Memento.cs" />
+    <Compile Include="Patterns\Prototype\Prototype.cs" />
+    <Compile Include="Patterns\Proxy\Proxy.cs" />
+    <Compile Include="Patterns\Singleton\Singleton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
