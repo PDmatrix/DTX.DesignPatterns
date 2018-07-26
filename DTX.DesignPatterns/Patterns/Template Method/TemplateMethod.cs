@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using DTX.DesignPatterns.Definition.PatternTypes;
 using DTX.DesignPatterns.Properties;
 
-namespace DTX.DesignPatterns.Patterns.Mediator
+namespace DTX.DesignPatterns.Patterns.Template_Method
 {
-    public class Mediator : BehavioralPattern
+    public class TemplateMethod : BehavioralPattern
     {
-        private const string PatternNameStr = "Mediator";
+        private const string PatternNameStr = "Template method";
 
-        public Mediator(IDictionary<string, string> args)
+        public TemplateMethod(IDictionary<string, string> args)
         {
             PatternName = PatternNameStr;
         }
@@ -21,7 +21,7 @@ namespace DTX.DesignPatterns.Patterns.Mediator
 
         public override string Description()
         {
-            return $"{PatternNameStr}: {Environment.NewLine}\t{PatternDescription.MediatorDescription}";
+            return $"{PatternNameStr}: {Environment.NewLine}\t{PatternDescription.TemplateMethodDescription}";
         }
     }
 }

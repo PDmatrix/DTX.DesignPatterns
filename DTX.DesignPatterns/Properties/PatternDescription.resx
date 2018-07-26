@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" />
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string" />
+							<xsd:attribute name="name" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="FactoryMethodDescription" xml:space="preserve">
+    <value>Define an interface for creating an object, but let subclasses decide which class to instantiate. Lets a class defer instantiation to subclasses.</value>
+    <comment>Description of the factory method</comment>
+  </data>
+	<data name="SingletonDescription" xml:space="preserve">
+    <value>Ensure a class only has one instance and provide a global point of access to it.</value>
+    <comment>Description of the singleton pattern</comment>
+  </data>
+	<data name="BuilderDescription" xml:space="preserve">
+		<value>Separate the construction of a complex object from its representing so that the same construction process can create different representations.</value>
+	</data>
+	<data name="AbstractFactoryDescription" xml:space="preserve">
+		<value>Provides an interface for creating families of related or dependent objects without specifying their concrete class.</value>
+	</data>
+	<data name="PrototypeDescription" xml:space="preserve">
+		<value>Specify the kinds of objects to create using a prototypical instance, and create new objects by copying this prototype.</value>
+	</data>
+	<data name="CommandDescription" xml:space="preserve">
+		<value>Encapsulate a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations.</value>
+	</data>
+	<data name="InterpreterDescription" xml:space="preserve">
+		<value>Given a language, define a representation for its grammar along with an interpreter that uses the representation to interpret sentences in the language.
+</value>
+	</data>
+	<data name="MediatorDescription" xml:space="preserve">
+		<value>Define an object that encapsulates how a set of objects interact. Promotes loose coupling by keeping objects from referring to each other explicitly and it lets you vary their interactions independently.
+</value>
+	</data>
+	<data name="MementoDescription" xml:space="preserve">
+		<value>Without violating encapsulation, capture and externalize an object's internal state so that the object can be restored to this state later.
+</value>
+	</data>
+	<data name="ObserverDescripton" xml:space="preserve">
+		<value>Define a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
+</value>
+	</data>
+	<data name="StateDescription" xml:space="preserve">
+		<value>Allow an object to alter its behavior when its internal state changes. The object will appear to change its class.
+</value>
+	</data>
+	<data name="StrategyDescription" xml:space="preserve">
+		<value>Define a family of algorithms, encapsulate each one, and make them interchangeable. Lets the algorithm vary independently from clients that use it.
+</value>
+	</data>
+	<data name="ChainOfResponsibilityDescription" xml:space="preserve">
+		<value>Avoid coupling the sender of a request to its receiver by giving more than one object a chance to handle the request. Chain the receiving objects and pass the request along the chain until an object handles it.
+</value>
+	</data>
+	<data name="TemplateMethodDescription" xml:space="preserve">
+		<value>Define the skeleton of an algorithm in an operation, deferring some steps to subclasses. Lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure.
+</value>
+	</data>
+	<data name="VisitorDescription" xml:space="preserve">
+		<value>Represent an operation to be performed on the elements of an object structure. Lets you define a new operation without changing the classes of the elements on which it operates.
+</value>
+	</data>
+	<data name="AdapterDescription" xml:space="preserve">
+		<value>Convert the interface of a class into another interface clients expect. Lets classes work together that couldn't otherwise because of incompatible interfaces.
+</value>
+	</data>
+	<data name="BridgeDescription" xml:space="preserve">
+		<value>Decouple an abstraction from its implementation so that the two can vary independently.
+</value>
+	</data>
+	<data name="CompositeDescription" xml:space="preserve">
+		<value>Compose objects into tree structures to represent part-whole hierarchies. Lets clients treat individual objects and compositions of objects uniformly.
+</value>
+	</data>
+	<data name="DecoratorDescription" xml:space="preserve">
+		<value>Attach additional responsibilities to an object dynamically. Provide a flexible alternative to sub-classing for extending functionality.
+</value>
+	</data>
+	<data name="FacadeDescription" xml:space="preserve">
+		<value>Provide a unified interface to a set of interfaces in a subsystem. Defines a high level interface that makes the subsystem easier to use.</value>
+	</data>
+	<data name="FlyweightDescription" xml:space="preserve">
+		<value>Use sharing to support large numbers of fine grained objects efficiently.</value>
+	</data>
+	<data name="ProxyDescription" xml:space="preserve">
+		<value>Provide a surrogate or placeholder for another object to control access to it.</value>
+	</data>
+	<data name="IteratorDescription" xml:space="preserve">
+		<value>Given a language, define a representation for its grammar along with an interpreter that uses the representation to interpret sentences in the language.</value>
+	</data>
+</root>

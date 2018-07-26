@@ -51,7 +51,7 @@ namespace DTX.DesignPatterns.Patterns.Singleton
 
         public override string Description()
         {
-            return Resources.SingletonDescription;
+            return $"{PatternNameStr}: {Environment.NewLine}\t{PatternDescription.SingletonDescription}";
         }
     }
 }

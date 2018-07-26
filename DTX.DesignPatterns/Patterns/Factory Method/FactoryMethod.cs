@@ -67,7 +67,7 @@ namespace DTX.DesignPatterns.Patterns.Factory_Method
         {
             Console.WriteLine($@"{PatternNameStr}:" + Environment.NewLine);
 
-            #region First Way
+            #region The First Way
 
             Console.WriteLine(@"The first way");
             Transport transport = new CarCreator();
@@ -79,7 +79,7 @@ namespace DTX.DesignPatterns.Patterns.Factory_Method
             #endregion
 
 
-            #region Second Way
+            #region The Second Way
 
             Console.WriteLine(Environment.NewLine + @"The second way");
             Transport newTransport = new CarCreator();
@@ -96,7 +96,7 @@ namespace DTX.DesignPatterns.Patterns.Factory_Method
 
         public override string Description()
         {
-            return Resources.FactoryMethodDescription;
+            return $"{PatternNameStr}: {Environment.NewLine}\t{PatternDescription.FactoryMethodDescription}";
         }
     }
 }

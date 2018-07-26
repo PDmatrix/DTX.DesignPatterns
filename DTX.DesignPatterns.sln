@@ -20,6 +20,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
+		RESX_DuplicateKeyHandling = Fail
 		SolutionGuid = {59C27A6E-C0C6-40DC-8385-D6861B63DD60}
 	EndGlobalSection
 EndGlobal

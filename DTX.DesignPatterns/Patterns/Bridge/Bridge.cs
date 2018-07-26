@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DTX.DesignPatterns.Definition.PatternTypes;
+using DTX.DesignPatterns.Properties;
 
 namespace DTX.DesignPatterns.Patterns.Bridge
 {
@@ -19,7 +21,7 @@ namespace DTX.DesignPatterns.Patterns.Bridge
 
         public override string Description()
         {
-            throw new System.NotImplementedException();
+            return $"{PatternNameStr}: {Environment.NewLine}\t{PatternDescription.BridgeDescription}";
         }
     }
 }

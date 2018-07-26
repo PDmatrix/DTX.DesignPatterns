@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using DTX.DesignPatterns.Definition.PatternTypes;
 using DTX.DesignPatterns.Properties;
 
-namespace DTX.DesignPatterns.Patterns.Abstract_Factory
+namespace DTX.DesignPatterns.Patterns.Interpreter
 {
-    public class AbstractFactory : CreationalPattern
+    public class Interpreter : BehavioralPattern
     {
-        private const string PatternNameStr = "Abstract factory";
+        private const string PatternNameStr = "Interpreter";
 
-        public AbstractFactory(IDictionary<string, string> args)
+        public Interpreter(IDictionary<string, string> args)
         {
             PatternName = PatternNameStr;
         }
@@ -21,7 +21,7 @@ namespace DTX.DesignPatterns.Patterns.Abstract_Factory
 
         public override string Description()
         {
-            return $"{PatternNameStr}: {Environment.NewLine}\t{PatternDescription.AbstractFactoryDescription}";
+            return $"{PatternNameStr}: {Environment.NewLine}\t{PatternDescription.InterpreterDescription}";
         }
     }
 }

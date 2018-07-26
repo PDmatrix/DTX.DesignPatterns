@@ -23,7 +23,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>0.0.4.0</ApplicationVersion>
+    <ApplicationVersion>0.0.5.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -77,13 +77,24 @@
     <Compile Include="Definition\Pattern.cs" />
     <Compile Include="Definition\PatternFactory.cs" />
     <Compile Include="Patterns\Flyweight\Flyweight.cs" />
+    <Compile Include="Patterns\Interpreter\Interpreter.cs" />
     <Compile Include="Patterns\Iterator\Iterator.cs" />
     <Compile Include="Patterns\Mediator\Mediator.cs" />
     <Compile Include="Patterns\Memento\Memento.cs" />
+    <Compile Include="Patterns\Observer\Observer.cs" />
     <Compile Include="Patterns\Prototype\Prototype.cs" />
     <Compile Include="Patterns\Proxy\Proxy.cs" />
     <Compile Include="Patterns\Singleton\Singleton.cs" />
+    <Compile Include="Patterns\State\State.cs" />
+    <Compile Include="Patterns\Strategy\Strategy.cs" />
+    <Compile Include="Patterns\Template Method\TemplateMethod.cs" />
+    <Compile Include="Patterns\Visitor\Visitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\PatternDescription.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PatternDescription.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -95,6 +106,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Properties\PatternDescription.ru.resx" />
+    <EmbeddedResource Include="Properties\PatternDescription.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>PatternDescription.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -112,5 +128,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

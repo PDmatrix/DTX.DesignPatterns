@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
-using DTX.DesignPatterns.Definition;
+﻿using System;
+using System.Collections.Generic;
 using DTX.DesignPatterns.Definition.PatternTypes;
+using DTX.DesignPatterns.Properties;
 
 namespace DTX.DesignPatterns.Patterns.Prototype
 {
@@ -20,7 +21,7 @@ namespace DTX.DesignPatterns.Patterns.Prototype
 
         public override string Description()
         {
-            throw new System.NotImplementedException();
+            return $"{PatternNameStr}: {Environment.NewLine}\t{PatternDescription.PrototypeDescription}";
         }
     }
 }
