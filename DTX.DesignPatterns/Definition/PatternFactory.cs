@@ -7,10 +7,10 @@ namespace DTX.DesignPatterns.Definition
 {
     public static class PatternFactory
     {
-        public static Pattern Create(IDictionary<string, string> args)
+        public static Pattern Create(string pattern)
         {
-            var patternType = Assembly.GetExecutingAssembly().GetTypes().First(r => r.Name == args["PATTERN"]);
-            return (Pattern)Activator.CreateInstance(patternType, args);
+            var patternType = Assembly.GetExecutingAssembly().GetTypes().First(r => r.Name == pattern);
+            return (Pattern)Activator.CreateInstance(patternType, new Dictionary<string, string>());
         }
     }
 }

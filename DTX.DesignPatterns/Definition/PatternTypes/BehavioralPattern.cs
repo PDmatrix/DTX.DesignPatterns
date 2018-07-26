@@ -2,8 +2,7 @@
 {
     public abstract class BehavioralPattern : Pattern
     {
-        // ReSharper disable once MemberCanBePrivate.Global
-        public const string PatternTypeName = "Behavioral pattern";
+        private const string PatternTypeName = "Behavioral pattern";
 
         protected BehavioralPattern()
         {

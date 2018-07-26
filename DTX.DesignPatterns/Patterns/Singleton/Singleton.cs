@@ -41,7 +41,7 @@ namespace DTX.DesignPatterns.Patterns.Singleton
 
         public override void Excecute()
         {
-            Console.WriteLine(@"Singleton:" + Environment.NewLine);
+            Console.WriteLine($@"{PatternNameStr}:" + Environment.NewLine);
             var logger = Logger.GetInstance();
             Logger.LogToConsole();
             Logger.LogToFile();

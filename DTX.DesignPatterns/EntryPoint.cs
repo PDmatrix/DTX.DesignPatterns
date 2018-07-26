@@ -9,80 +9,61 @@ namespace DTX.DesignPatterns
 {
     internal static class EntryPoint
     {
+        private static readonly OptionSet OptionSet = new OptionSet {
+            { "l|list", "list of patterns", v => PrintPatterns()},
+            { "c|concretelist=", "list of {PATTERNTYPE}", PrintPatterns},
+            { "p|pattern=", "execute {PATTERN}", v=> PatternFactory.Create(v).Excecute() },
+            { "d|description=", "description fo the {PATTERN}", v=> Console.WriteLine(PatternFactory.Create(v).Description()) },
+            { "h|help", "show help", v=> ShowHelp() }
+        };
+
         private static void Main(string[] args)
         {
-            var showHelp = false;
-
-            var optionSet = new OptionSet() {
-                { "l|list", "list of patterns", v => ShowListOfPatterns()},
-                { "tl|typelist", "list of type patterns", v => ShowListOfTypePatterns() },
-                { "h|help", "show help", v => showHelp = v != null }
-                /*{ "n|name=", "the {NAME} of someone to greet.",
-                    v => names.Add (v) },
-                { "r|repeat=",
-                    "the number of {TIMES} to repeat the greeting.\n" +
-                    "this must be an integer.",
-                    (int v) => repeat = v },
-                { "v", "increase debug message verbosity",
-                    v => { if (v != null) ++verbosity; } },
-                { "h|help",  "show this message and exit",
-                    v => show_help = v != null },*/
-            };
-
-            List<string> extra;
             try
             {
-                extra = optionSet.Parse(args);
+                OptionSet.Parse(args);
+                Console.ReadKey();
             }
             catch (OptionException e)
             {
                 Console.Write(@"DTX.DesignPatterns: ");
                 Console.WriteLine(e.Message);
                 Console.WriteLine(@"Try 'DTX.DesignPatterns --help' for more information.");
-                return;
-            }
-
-            if (!showHelp) return;
-            ShowHelp(optionSet);
-            //optionSet.WriteOptionDescriptions(Console.Out);
-            //var dictionary = ParseArgs(args);
-            // var pattern = PatternFactory.Create(dictionary);
-            //Console.WriteLine(pattern.PatternType);
-            //Console.WriteLine(pattern.Description());
-            //pattern.Excecute();
-        }
-
-        private static void ShowHelp(OptionSet optionSet)
-        {
-            optionSet.WriteOptionDescriptions(Console.Out);
-        }
-
-        private static void ShowListOfPatterns()
-        {
-            foreach (var patternName in GetPatterns())
-            {
-                Console.WriteLine(patternName);
             }
         }
 
-        private static void ShowListOfTypePatterns()
+        private static void ShowHelp()
         {
-            foreach (var patternType in GetPatternTypes())
-            {
-                Console.WriteLine(patternType);
-            }
+            OptionSet.WriteOptionDescriptions(Console.Out);
         }
 
-        private static IEnumerable<string> GetPatternTypes()
+        private static void PrintPatterns()
         {
             var patternTypes = Assembly.GetExecutingAssembly().GetTypes().Where(r => r.BaseType == typeof(Pattern));
-            return patternTypes.Select(patternType => (string) patternType.GetField("PatternTypeName").GetRawConstantValue()).ToList();
+            foreach (var patternType in patternTypes)
+            {
+                var concretePatterns =
+                    Assembly.GetExecutingAssembly().GetTypes().Where(r => r.BaseType == patternType);
+                Console.WriteLine($@"{patternType.Name}:");
+                foreach (var pattern in concretePatterns)
+                {
+                    Console.WriteLine($@"   {((Pattern)Activator.CreateInstance(pattern, args: new Dictionary<string, string>())).PatternName}");
+                }
+                Console.WriteLine();
+            }
         }
 
-        private static IEnumerable<string> GetPatterns()
+        private static void PrintPatterns(string patternType)
         {
-            var patternNames = Assembly.GetExecutingAssembly().GetTypes().Where(r => r.IsSubclassOf(typeof(Pattern)) && r.BaseType != typeof(Pattern));
-            return patternNames.Select(patternName => ((Pattern) Activator.CreateInstance(patternName, args: new Dictionary<string, string>())).PatternName).ToList();
+            var concretePatterns = Assembly.GetExecutingAssembly().GetTypes().Where(r => r.BaseType?.Name == patternType);
+            Console.WriteLine($@"{patternType}:");
+            foreach (var pattern in concretePatterns)
+            {
+                Console.WriteLine(
+                    $@"	{((Pattern) Activator.CreateInstance(pattern, args: new Dictionary<string, string>())).PatternName}");
+            }
+
+            Console.WriteLine();
         }
     }
 }
