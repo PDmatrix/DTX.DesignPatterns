@@ -7,7 +7,7 @@ namespace DTX.DesignPatterns.Patterns.Chain_of_Responsibility
 {
     public class ChainOfResponsibility : BehavioralPattern
     {
-        private const string PatternNameStr = "Chain of responsibility";
+        private static readonly string PatternNameStr = Properties.PatternName.ChainOfResponsibilityName;
 
         public ChainOfResponsibility(IDictionary<string, string> args)
         {

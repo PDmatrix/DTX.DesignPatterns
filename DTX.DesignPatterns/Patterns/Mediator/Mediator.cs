@@ -7,7 +7,7 @@ namespace DTX.DesignPatterns.Patterns.Mediator
 {
     public class Mediator : BehavioralPattern
     {
-        private const string PatternNameStr = "Mediator";
+        private static readonly string PatternNameStr = Properties.PatternName.MediatorName;
 
         public Mediator(IDictionary<string, string> args)
         {

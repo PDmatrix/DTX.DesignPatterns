@@ -7,7 +7,7 @@ namespace DTX.DesignPatterns.Patterns.Facade
 {
     public class Facade : StructuralPattern
     {
-        private const string PatternNameStr = "Facade";
+        private static readonly string PatternNameStr = Properties.PatternName.FacadeName;
 
         public Facade(IDictionary<string, string> args)
         {

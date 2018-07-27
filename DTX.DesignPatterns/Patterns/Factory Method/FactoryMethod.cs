@@ -56,16 +56,16 @@ namespace DTX.DesignPatterns.Patterns.Factory_Method
    
     public class FactoryMethod : CreationalPattern
     {
-        private const string PatternNameStr = "Factory method";
+        private readonly string _patternNameStr = Properties.PatternName.FactoryMethodName;
 
         public FactoryMethod(IDictionary<string, string> args)
         {
-            PatternName = PatternNameStr;
+            PatternName = _patternNameStr;
         }
 
         public override void Excecute()
         {
-            Console.WriteLine($@"{PatternNameStr}:" + Environment.NewLine);
+            Console.WriteLine($@"{_patternNameStr}:" + Environment.NewLine);
 
             #region The First Way
 
@@ -81,7 +81,7 @@ namespace DTX.DesignPatterns.Patterns.Factory_Method
 
             #region The Second Way
 
-            Console.WriteLine(Environment.NewLine + @"The second way");
+            Console.WriteLine($@"{Environment.NewLine}The second way");
             Transport newTransport = new CarCreator();
             var car = newTransport.CreateTransport();
             car.Move();
@@ -96,7 +96,7 @@ namespace DTX.DesignPatterns.Patterns.Factory_Method
 
         public override string Description()
         {
-            return $"{PatternNameStr}: {Environment.NewLine}\t{PatternDescription.FactoryMethodDescription}";
+            return $"{_patternNameStr}: {Environment.NewLine}\t{PatternDescription.FactoryMethodDescription}";
         }
     }
 }

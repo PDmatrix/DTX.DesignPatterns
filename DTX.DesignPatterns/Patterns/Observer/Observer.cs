@@ -7,7 +7,7 @@ namespace DTX.DesignPatterns.Patterns.Observer
 {
     public class Observer : BehavioralPattern
     {
-        private const string PatternNameStr = "Observer";
+        private static readonly string PatternNameStr = Properties.PatternName.ObserverName;
 
         public Observer(IDictionary<string, string> args)
         {

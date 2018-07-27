@@ -7,7 +7,7 @@ namespace DTX.DesignPatterns.Patterns.Iterator
 {
     public class Iterator : BehavioralPattern
     {
-        private const string PatternNameStr = "Iterator";
+        private static readonly string PatternNameStr = Properties.PatternName.IteratorName;
 
         public Iterator(IDictionary<string, string> args)
         {

@@ -7,7 +7,7 @@ namespace DTX.DesignPatterns.Patterns.Bridge
 {
     public class Bridge : StructuralPattern
     {
-        private const string PatternNameStr = "Bridge";
+        private static readonly string PatternNameStr = Properties.PatternName.BridgeName;
 
         public Bridge(IDictionary<string, string> args)
         {

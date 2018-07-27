@@ -7,7 +7,7 @@ namespace DTX.DesignPatterns.Patterns.Decorator
 {
     public class Decorator : StructuralPattern
     {
-        private const string PatternNameStr = "Decorator";
+        private static readonly string PatternNameStr = Properties.PatternName.DecoratorName;
 
         public Decorator(IDictionary<string, string> args)
         {

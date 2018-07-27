@@ -7,7 +7,7 @@ namespace DTX.DesignPatterns.Patterns.Adapter
 {
     public class Adapter : StructuralPattern
     {
-        private const string PatternNameStr = "Adapter";
+        private static readonly string PatternNameStr = Properties.PatternName.AdapterName;
 
         public Adapter(IDictionary<string, string> args)
         {

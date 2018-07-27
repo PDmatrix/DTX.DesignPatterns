@@ -7,7 +7,7 @@ namespace DTX.DesignPatterns.Patterns.Composite
 {
     public class Composite : StructuralPattern
     {
-        private const string PatternNameStr = "Composite";
+        private static readonly string PatternNameStr = Properties.PatternName.CompositeName;
 
         public Composite(IDictionary<string, string> args)
         {

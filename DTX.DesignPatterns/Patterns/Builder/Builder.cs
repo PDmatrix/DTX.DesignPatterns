@@ -7,7 +7,7 @@ namespace DTX.DesignPatterns.Patterns.Builder
 {
     public class Builder : CreationalPattern
     {
-        private const string PatternNameStr = "Builder";
+        private static readonly string PatternNameStr = Properties.PatternName.BuilderName;
 
         public Builder(IDictionary<string, string> args)
         {

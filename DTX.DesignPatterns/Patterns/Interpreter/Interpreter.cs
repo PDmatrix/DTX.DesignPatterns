@@ -7,7 +7,7 @@ namespace DTX.DesignPatterns.Patterns.Interpreter
 {
     public class Interpreter : BehavioralPattern
     {
-        private const string PatternNameStr = "Interpreter";
+        private static readonly string PatternNameStr = Properties.PatternName.InterpreterName;
 
         public Interpreter(IDictionary<string, string> args)
         {

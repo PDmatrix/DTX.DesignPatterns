@@ -7,11 +7,11 @@ namespace DTX.DesignPatterns.Patterns.Visitor
 {
     public class Visitor : BehavioralPattern
     {
-        private const string PatternNameStr = "Visitor";
+        private readonly string _patternNameStr = Properties.PatternName.VisitorName;
 
         public Visitor(IDictionary<string, string> args)
         {
-            PatternName = PatternNameStr;
+            PatternName = _patternNameStr;
         }
 
         public override void Excecute()
@@ -21,7 +21,7 @@ namespace DTX.DesignPatterns.Patterns.Visitor
 
         public override string Description()
         {
-            return $"{PatternNameStr}: {Environment.NewLine}\t{PatternDescription.VisitorDescription}";
+            return $"{_patternNameStr}: {Environment.NewLine}\t{PatternDescription.VisitorDescription}";
         }
     }
 }

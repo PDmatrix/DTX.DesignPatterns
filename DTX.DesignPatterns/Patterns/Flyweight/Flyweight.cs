@@ -7,7 +7,7 @@ namespace DTX.DesignPatterns.Patterns.Flyweight
 {
     public class Flyweight : StructuralPattern
     {
-        private const string PatternNameStr = "Flyweight";
+        private static readonly string PatternNameStr = Properties.PatternName.FlyweightName;
 
         public Flyweight(IDictionary<string, string> args)
         {

@@ -7,7 +7,7 @@ namespace DTX.DesignPatterns.Patterns.Memento
 {
     public class Memento : BehavioralPattern
     {
-        private const string PatternNameStr = "Memento";
+        private static readonly string PatternNameStr = Properties.PatternName.MementoName;
 
         public Memento(IDictionary<string, string> args)
         {

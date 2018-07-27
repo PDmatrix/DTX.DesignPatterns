@@ -7,21 +7,21 @@ namespace DTX.DesignPatterns.Patterns.Proxy
 {
     public class Proxy : StructuralPattern
     {
-        private const string PatternNameStr = "Proxy";
+        private readonly string _patternNameStr = Properties.PatternName.ProxyName;
 
         public Proxy(IDictionary<string, string> args)
         {
-            PatternName = PatternNameStr;
+            PatternName = _patternNameStr;
         }
 
         public override void Excecute()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public override string Description()
         {
-            return $"{PatternNameStr}: {Environment.NewLine}\t{PatternDescription.ProxyDescription}";
+            return $"{_patternNameStr}: {Environment.NewLine}\t{PatternDescription.ProxyDescription}";
         }
     }
 }

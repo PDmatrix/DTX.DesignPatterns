@@ -7,7 +7,7 @@ namespace DTX.DesignPatterns.Patterns.Command
 {
     public class Command : BehavioralPattern
     {
-        private const string PatternNameStr = "Command";
+        private static readonly string PatternNameStr = Properties.PatternName.CommandName;
 
         public Command(IDictionary<string, string> args)
         {

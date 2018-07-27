@@ -7,11 +7,11 @@ namespace DTX.DesignPatterns.Patterns.Template_Method
 {
     public class TemplateMethod : BehavioralPattern
     {
-        private const string PatternNameStr = "Template method";
+        private readonly string _patternNameStr = Properties.PatternName.TemplateMethodName;
 
         public TemplateMethod(IDictionary<string, string> args)
         {
-            PatternName = PatternNameStr;
+            PatternName = _patternNameStr;
         }
 
         public override void Excecute()
@@ -21,7 +21,7 @@ namespace DTX.DesignPatterns.Patterns.Template_Method
 
         public override string Description()
         {
-            return $"{PatternNameStr}: {Environment.NewLine}\t{PatternDescription.TemplateMethodDescription}";
+            return $"{_patternNameStr}: {Environment.NewLine}\t{PatternDescription.TemplateMethodDescription}";
         }
     }
 }

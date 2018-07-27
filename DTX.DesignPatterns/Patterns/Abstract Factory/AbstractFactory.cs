@@ -7,7 +7,7 @@ namespace DTX.DesignPatterns.Patterns.Abstract_Factory
 {
     public class AbstractFactory : CreationalPattern
     {
-        private const string PatternNameStr = "Abstract factory";
+        private static readonly string PatternNameStr = Properties.PatternName.AbstractFactoryName;
 
         public AbstractFactory(IDictionary<string, string> args)
         {

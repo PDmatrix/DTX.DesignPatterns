@@ -7,11 +7,11 @@ namespace DTX.DesignPatterns.Patterns.State
 {
     public class State : BehavioralPattern
     {
-        private const string PatternNameStr = "State";
+        private readonly string _patternNameStr = Properties.PatternName.StateName;
 
         public State(IDictionary<string, string> args)
         {
-            PatternName = PatternNameStr;
+            PatternName = _patternNameStr;
         }
 
         public override void Excecute()
@@ -21,7 +21,7 @@ namespace DTX.DesignPatterns.Patterns.State
 
         public override string Description()
         {
-            return $"{PatternNameStr}: {Environment.NewLine}\t{PatternDescription.StateDescription}";
+            return $"{_patternNameStr}: {Environment.NewLine}\t{PatternDescription.StateDescription}";
         }
     }
 }

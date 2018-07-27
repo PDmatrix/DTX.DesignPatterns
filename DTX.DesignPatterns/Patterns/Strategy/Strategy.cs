@@ -7,11 +7,11 @@ namespace DTX.DesignPatterns.Patterns.Strategy
 {
     public class Strategy : BehavioralPattern
     {
-        private const string PatternNameStr = "Strategy";
+        private readonly string _patternNameStr = Properties.PatternName.StrategyName;
 
         public Strategy(IDictionary<string, string> args)
         {
-            PatternName = PatternNameStr;
+            PatternName = _patternNameStr;
         }
 
         public override void Excecute()
@@ -21,7 +21,7 @@ namespace DTX.DesignPatterns.Patterns.Strategy
 
         public override string Description()
         {
-            return $"{PatternNameStr}: {Environment.NewLine}\t{PatternDescription.StrategyDescription}";
+            return $"{_patternNameStr}: {Environment.NewLine}\t{PatternDescription.StrategyDescription}";
         }
     }
 }

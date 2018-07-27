@@ -7,11 +7,11 @@ namespace DTX.DesignPatterns.Patterns.Prototype
 {
     public class Prototype : CreationalPattern
     {
-        private const string PatternNameStr = "Prototype";
+        private readonly string _patternNameStr = Properties.PatternName.PrototypeName;
 
         public Prototype(IDictionary<string, string> args)
         {
-            PatternName = PatternNameStr;
+            PatternName = _patternNameStr;
         }
 
         public override void Excecute()
@@ -21,7 +21,7 @@ namespace DTX.DesignPatterns.Patterns.Prototype
 
         public override string Description()
         {
-            return $"{PatternNameStr}: {Environment.NewLine}\t{PatternDescription.PrototypeDescription}";
+            return $"{_patternNameStr}: {Environment.NewLine}\t{PatternDescription.PrototypeDescription}";
         }
     }
 }

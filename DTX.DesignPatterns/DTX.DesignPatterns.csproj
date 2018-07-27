@@ -22,8 +22,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>1</ApplicationRevision>
-    <ApplicationVersion>0.0.5.1</ApplicationVersion>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>0.0.6.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -84,6 +84,8 @@
     <Compile Include="Patterns\Observer\Observer.cs" />
     <Compile Include="Patterns\Prototype\Prototype.cs" />
     <Compile Include="Patterns\Proxy\Proxy.cs" />
+    <Compile Include="Patterns\Singleton\AmbientContext.cs" />
+    <Compile Include="Patterns\Singleton\LazySingleton.cs" />
     <Compile Include="Patterns\Singleton\Singleton.cs" />
     <Compile Include="Patterns\State\State.cs" />
     <Compile Include="Patterns\Strategy\Strategy.cs" />
@@ -94,6 +96,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PatternDescription.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\PatternName.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PatternName.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -110,6 +117,11 @@
     <EmbeddedResource Include="Properties\PatternDescription.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>PatternDescription.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\PatternName.ru.resx" />
+    <EmbeddedResource Include="Properties\PatternName.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>PatternName.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

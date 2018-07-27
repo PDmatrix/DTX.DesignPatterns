@@ -5,53 +5,37 @@ using DTX.DesignPatterns.Properties;
 
 namespace DTX.DesignPatterns.Patterns.Singleton
 {
-    public sealed class Logger
-    {
-        private static readonly Logger Instance = new Logger();
-
-
-        private Logger()
-        {
-        }
-
-        public static Logger GetInstance()
-        {
-            return Instance;
-        }
-
-        public static void LogToConsole()
-        {
-            Console.WriteLine(@"Logging into console...");
-        }
-
-        public static void LogToFile()
-        {
-            Console.WriteLine(@"Logging into file...");
-        }
-    }
-
     public class Singleton : CreationalPattern
     {
-        private const string PatternNameStr = "Singleton";
+        private readonly string _patternNameStr = Properties.PatternName.SingletonName;
 
         public Singleton(IDictionary<string, string> args)
         {
-            PatternName = PatternNameStr;
+            PatternName = _patternNameStr;
         }
 
         public override void Excecute()
         {
-            Console.WriteLine($@"{PatternNameStr}:" + Environment.NewLine);
-            var logger = Logger.GetInstance();
-            Logger.LogToConsole();
-            Logger.LogToFile();
-            var newLogger = Logger.GetInstance();
-            Console.WriteLine($@"logger == newLogger : {logger == newLogger}");
+            Console.WriteLine($@"{_patternNameStr}:{Environment.NewLine}");
+
+            #region The First Way
+
+            Console.WriteLine(@"The first way");
+            LazySingleton.Start();
+            #endregion
+
+            #region The Second Way
+
+            Console.WriteLine($@"{Environment.NewLine}The second way");
+            AmbientContext.Start();
+            Console.WriteLine(AmbientContext.GlobalLogger.Logger);
+
+            #endregion
         }
 
         public override string Description()
         {
-            return $"{PatternNameStr}: {Environment.NewLine}\t{PatternDescription.SingletonDescription}";
+            return $"{_patternNameStr}: {Environment.NewLine}\t{PatternDescription.SingletonDescription}";
         }
     }
 }
