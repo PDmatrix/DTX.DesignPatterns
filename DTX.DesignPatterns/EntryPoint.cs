@@ -41,7 +41,7 @@ namespace DTX.DesignPatterns
 
         private static void ChangeLanguage(string lang)
         {
-            CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.GetCultureInfo(lang.ToLower());
+            CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.GetCultureInfo(lang.ToLowerInvariant());
         }
 
         private static void PrintPatterns()
