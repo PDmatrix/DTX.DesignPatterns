@@ -2,7 +2,7 @@
 {
     public abstract class BehavioralPattern : Pattern
     {
-        private const string PatternTypeName = "Behavioral pattern";
+        private static readonly string PatternTypeName = Properties.PatternType.BehavioralPatternName;
 
         protected BehavioralPattern()
         {

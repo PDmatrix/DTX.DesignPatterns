@@ -2,7 +2,7 @@
 {
     public abstract class StructuralPattern : Pattern
     {
-        private const string PatternTypeName = "Structural pattern";
+        private static readonly string PatternTypeName = Properties.PatternType.StructuralPatternName;
 
         protected StructuralPattern()
         {

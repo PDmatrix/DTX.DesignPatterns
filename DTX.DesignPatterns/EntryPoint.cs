@@ -3,20 +3,19 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using DTX.DesignPatterns.Definition;
-using NDesk.Options;
+using Mono.Options;
 
 namespace DTX.DesignPatterns
 {
     public static class EntryPoint
     {
         private static readonly OptionSet OptionSet = new OptionSet {
-            { "l|list", "list of patterns", v => PrintPatterns()},
-            { "c|concretelist=", "list of {PATTERNTYPE}", PrintPatterns},
-            { "p|pattern=", "execute {PATTERN}", v=> PatternFactory.Create(v).Excecute() },
-            { "d|description=", "description of the {PATTERN}. If {PATTERN} contains whitespaces, you should type it in one word",
+            { "l|list:", "list of all or {patterntype} patterns", PrintPatterns },
+            { "p|pattern=", "execute {pattern}", v=> PatternFactory.Create(v).Excecute() },
+            { "d|description=", "description of the {pattern}.",
                 v => Console.WriteLine(PatternFactory.Create(v).Description()) },
-            { "lang=", "{LANGUAGE} of the program", ChangeLanguage },
-            { "h|help", "show help", v=> ShowHelp() }
+            { "lang=", "{language} of the program", ChangeLanguage },
+            { "?|h|help", "show help", v => ShowHelp() }
         };
 
         private static void Main(string[] args)
@@ -24,7 +23,6 @@ namespace DTX.DesignPatterns
             try
             {
                 OptionSet.Parse(args);
-                Console.ReadKey();
             }
             catch (OptionException e)
             {
@@ -44,9 +42,11 @@ namespace DTX.DesignPatterns
             CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.GetCultureInfo(lang.ToLowerInvariant());
         }
 
-        private static void PrintPatterns()
+        private static void PrintPatterns(string patternTypeName)
         {
-            var patternTypes = Assembly.GetExecutingAssembly().GetTypes().Where(r => r.BaseType == typeof(Pattern));
+
+            var patternTypes = Assembly.GetExecutingAssembly().GetTypes().Where(r => 
+                patternTypeName != null ? r.Name == patternTypeName : r.BaseType == typeof(Pattern));//r.BaseType == typeof(Pattern));
             foreach (var patternType in patternTypes)
             {
                 var concretePatterns =
@@ -61,24 +61,6 @@ namespace DTX.DesignPatterns
                 }
                 Console.WriteLine();
             }
-        }
-
-        private static void PrintPatterns(string patternTypeName)
-        {
-            var patternType = 
-                Assembly.GetEntryAssembly().GetTypes().First(r => r.Name == patternTypeName);
-
-            var concretePatterns = 
-                Assembly.GetExecutingAssembly().GetTypes().Where(r => r.IsSubclassOf(patternType)).ToArray();
-
-            Console.WriteLine(
-                $@"{PatternFactory.Create(concretePatterns.First().Name).PatternType}:");
-            foreach (var pattern in concretePatterns)
-            {
-                Console.WriteLine(
-                    $@"	{PatternFactory.Create(pattern.Name).PatternName}");
-            }
-            Console.WriteLine();
         }
     }
 }
