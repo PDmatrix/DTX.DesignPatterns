@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using DTX.DesignPatterns.Definition;
 using DTX.DesignPatterns.Definition.PatternTypes;
 using DTX.DesignPatterns.Properties;
 
@@ -54,13 +55,14 @@ namespace DTX.DesignPatterns.Patterns.Factory_Method
         }
     }
    
-    public class FactoryMethod : CreationalPattern
+    public class FactoryMethod : Pattern
     {
         private readonly string _patternNameStr = Properties.PatternName.FactoryMethodName;
 
         public FactoryMethod(IDictionary<string, string> args)
         {
             PatternName = _patternNameStr;
+            PatternType = new CreationalPattern();
         }
 
         public override void Excecute()

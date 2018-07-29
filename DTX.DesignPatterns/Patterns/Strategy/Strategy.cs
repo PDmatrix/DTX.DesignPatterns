@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using DTX.DesignPatterns.Definition;
 using DTX.DesignPatterns.Definition.PatternTypes;
 using DTX.DesignPatterns.Properties;
 
 namespace DTX.DesignPatterns.Patterns.Strategy
 {
-    public class Strategy : BehavioralPattern
+    public class Strategy : Pattern
     {
-        private readonly string _patternNameStr = Properties.PatternName.StrategyName;
+        private static readonly string PatternNameStr = Properties.PatternName.StrategyName;
 
         public Strategy(IDictionary<string, string> args)
         {
-            PatternName = _patternNameStr;
+            PatternName = PatternNameStr;
+            PatternType = new BehavioralPattern();
         }
 
         public override void Excecute()
@@ -21,7 +23,7 @@ namespace DTX.DesignPatterns.Patterns.Strategy
 
         public override string Description()
         {
-            return $"{_patternNameStr}: {Environment.NewLine}\t{PatternDescription.StrategyDescription}";
+            return $"{PatternNameStr}: {Environment.NewLine}\t{PatternDescription.StrategyDescription}";
         }
     }
 }

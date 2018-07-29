@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Definition\PatternTypes\BehavioralPattern.cs" />
     <Compile Include="Definition\PatternTypes\CreationalPattern.cs" />
+    <Compile Include="Definition\PatternTypes\IPatternType.cs" />
     <Compile Include="Definition\PatternTypes\StructuralPattern.cs" />
     <Compile Include="EntryPoint.cs" />
     <Compile Include="Patterns\Abstract Factory\AbstractFactory.cs" />

@@ -44,23 +44,17 @@ namespace DTX.DesignPatterns
 
         private static void PrintPatterns(string patternTypeName)
         {
+            var patterns = Assembly.GetExecutingAssembly().GetTypes().Where(r => r.BaseType == typeof(Pattern));
+            
+            var patternClasses = patterns.Select(r => PatternFactory.Create(r.Name))
+                .Where(r => patternTypeName == null || string.Equals(r.PatternType.GetType().Name, patternTypeName,
+                                StringComparison.CurrentCultureIgnoreCase));
 
-            var patternTypes = Assembly.GetExecutingAssembly().GetTypes().Where(r => 
-                patternTypeName != null ? r.Name == patternTypeName : r.BaseType == typeof(Pattern));//r.BaseType == typeof(Pattern));
-            foreach (var patternType in patternTypes)
+            foreach (var patternClass in patternClasses)
             {
-                var concretePatterns =
-                    Assembly.GetExecutingAssembly().GetTypes().Where(r => r.BaseType == patternType).ToArray();
-
                 Console.WriteLine(
-                    $@"{PatternFactory.Create(concretePatterns.First().Name).PatternType}:");
-                foreach (var pattern in concretePatterns)
-                {
-                    Console.WriteLine(
-                        $@"   {PatternFactory.Create(pattern.Name).PatternName}");
-                }
-                Console.WriteLine();
+                    $@"{patternClass.PatternName}");
             }
         }
     }
-}
+ }

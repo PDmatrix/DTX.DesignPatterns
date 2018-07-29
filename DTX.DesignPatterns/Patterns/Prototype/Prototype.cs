@@ -1,27 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
+using DTX.DesignPatterns.Definition;
 using DTX.DesignPatterns.Definition.PatternTypes;
 using DTX.DesignPatterns.Properties;
 
 namespace DTX.DesignPatterns.Patterns.Prototype
 {
-    public class Prototype : CreationalPattern
+    public class Prototype : Pattern
     {
-        private readonly string _patternNameStr = Properties.PatternName.PrototypeName;
+        private static readonly string PatternNameStr = Properties.PatternName.PrototypeName;
 
         public Prototype(IDictionary<string, string> args)
         {
-            PatternName = _patternNameStr;
+            PatternName = PatternNameStr;
+            PatternType = new CreationalPattern();
         }
 
         public override void Excecute()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public override string Description()
         {
-            return $"{_patternNameStr}: {Environment.NewLine}\t{PatternDescription.PrototypeDescription}";
+            return $"{PatternNameStr}: {Environment.NewLine}\t{PatternDescription.PrototypeDescription}";
         }
     }
 }

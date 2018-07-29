@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using DTX.DesignPatterns.Definition;
 using DTX.DesignPatterns.Definition.PatternTypes;
 using DTX.DesignPatterns.Properties;
 
 namespace DTX.DesignPatterns.Patterns.Template_Method
 {
-    public class TemplateMethod : BehavioralPattern
+    public class TemplateMethod : Pattern
     {
-        private readonly string _patternNameStr = Properties.PatternName.TemplateMethodName;
+        private static readonly string PatternNameStr = Properties.PatternName.TemplateMethodName;
 
         public TemplateMethod(IDictionary<string, string> args)
         {
-            PatternName = _patternNameStr;
+            PatternName = PatternNameStr;
+            PatternType = new BehavioralPattern();
         }
 
         public override void Excecute()
@@ -21,7 +23,7 @@ namespace DTX.DesignPatterns.Patterns.Template_Method
 
         public override string Description()
         {
-            return $"{_patternNameStr}: {Environment.NewLine}\t{PatternDescription.TemplateMethodDescription}";
+            return $"{PatternNameStr}: {Environment.NewLine}\t{PatternDescription.TemplateMethodDescription}";
         }
     }
 }

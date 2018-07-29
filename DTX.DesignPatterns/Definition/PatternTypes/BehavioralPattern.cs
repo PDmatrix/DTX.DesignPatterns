@@ -1,12 +1,9 @@
 ﻿namespace DTX.DesignPatterns.Definition.PatternTypes
 {
-    public abstract class BehavioralPattern : Pattern
+    public class BehavioralPattern : IPatternType
     {
         private static readonly string PatternTypeName = Properties.PatternType.BehavioralPatternName;
-
-        protected BehavioralPattern()
-        {
-            PatternType = PatternTypeName;
-        }
+        
+        public string PatternType => PatternTypeName;
     }
 }

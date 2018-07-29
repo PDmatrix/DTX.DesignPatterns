@@ -1,12 +1,9 @@
 ﻿namespace DTX.DesignPatterns.Definition.PatternTypes
 {
-    public abstract class CreationalPattern : Pattern
+    public class CreationalPattern : IPatternType
     {
         private static readonly string PatternTypeName = Properties.PatternType.CreationalPatternName;
 
-        protected CreationalPattern()
-        {
-            PatternType = PatternTypeName;
-        }
+        public string PatternType => PatternTypeName;
     }
 }

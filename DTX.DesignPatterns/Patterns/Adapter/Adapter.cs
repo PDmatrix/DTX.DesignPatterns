@@ -1,22 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using DTX.DesignPatterns.Definition;
 using DTX.DesignPatterns.Definition.PatternTypes;
 using DTX.DesignPatterns.Properties;
 
 namespace DTX.DesignPatterns.Patterns.Adapter
 {
-    public class Adapter : StructuralPattern
+    public class Adapter : Pattern
     {
         private static readonly string PatternNameStr = Properties.PatternName.AdapterName;
 
         public Adapter(IDictionary<string, string> args)
         {
             PatternName = PatternNameStr;
+            PatternType = new StructuralPattern();
         }
 
         public override void Excecute()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public override string Description()

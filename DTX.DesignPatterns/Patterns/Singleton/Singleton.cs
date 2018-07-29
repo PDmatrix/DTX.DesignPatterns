@@ -1,22 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using DTX.DesignPatterns.Definition;
 using DTX.DesignPatterns.Definition.PatternTypes;
 using DTX.DesignPatterns.Properties;
 
 namespace DTX.DesignPatterns.Patterns.Singleton
 {
-    public class Singleton : CreationalPattern
+    public class Singleton : Pattern
     {
-        private readonly string _patternNameStr = Properties.PatternName.SingletonName;
+        private static readonly string PatternNameStr = Properties.PatternName.SingletonName;
 
         public Singleton(IDictionary<string, string> args)
         {
-            PatternName = _patternNameStr;
+            PatternName = PatternNameStr;
+            PatternType = new CreationalPattern();
         }
+        
 
         public override void Excecute()
         {
-            Console.WriteLine($@"{_patternNameStr}:{Environment.NewLine}");
+            Console.WriteLine($@"{PatternNameStr}:{Environment.NewLine}");
 
             #region The First Way
 
@@ -35,7 +38,7 @@ namespace DTX.DesignPatterns.Patterns.Singleton
 
         public override string Description()
         {
-            return $"{_patternNameStr}: {Environment.NewLine}\t{PatternDescription.SingletonDescription}";
+            return $"{PatternNameStr}: {Environment.NewLine}\t{PatternDescription.SingletonDescription}";
         }
     }
 }

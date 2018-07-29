@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using DTX.DesignPatterns.Definition;
 using DTX.DesignPatterns.Definition.PatternTypes;
 using DTX.DesignPatterns.Properties;
 
 namespace DTX.DesignPatterns.Patterns.Visitor
 {
-    public class Visitor : BehavioralPattern
+    public class Visitor : Pattern
     {
-        private readonly string _patternNameStr = Properties.PatternName.VisitorName;
+        private static readonly string PatternNameStr = Properties.PatternName.VisitorName;
 
         public Visitor(IDictionary<string, string> args)
         {
-            PatternName = _patternNameStr;
+            PatternName = PatternNameStr;
+            PatternType = new BehavioralPattern();
         }
 
         public override void Excecute()
@@ -21,7 +23,7 @@ namespace DTX.DesignPatterns.Patterns.Visitor
 
         public override string Description()
         {
-            return $"{_patternNameStr}: {Environment.NewLine}\t{PatternDescription.VisitorDescription}";
+            return $"{PatternNameStr}: {Environment.NewLine}\t{PatternDescription.VisitorDescription}";
         }
     }
 }
