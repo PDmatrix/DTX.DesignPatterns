@@ -2,8 +2,6 @@
 {
     public class BehavioralPattern : IPatternType
     {
-        private static readonly string PatternTypeName = Properties.PatternType.BehavioralPatternName;
-        
-        public string PatternType => PatternTypeName;
+        public string PatternType { get; } = Properties.PatternType.BehavioralPatternName;
     }
 }

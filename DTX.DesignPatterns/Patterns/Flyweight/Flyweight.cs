@@ -18,7 +18,7 @@ namespace DTX.DesignPatterns.Patterns.Flyweight
 
         public override void Excecute()
         {
-            throw new NotImplementedException();
+            Console.WriteLine($@"{PatternNameStr}:{Environment.NewLine}");
         }
 
         public override string Description()

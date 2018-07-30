@@ -18,7 +18,7 @@ namespace DTX.DesignPatterns.Patterns.Memento
 
         public override void Excecute()
         {
-            throw new System.NotImplementedException();
+            Console.WriteLine($@"{PatternNameStr}:{Environment.NewLine}");
         }
 
         public override string Description()

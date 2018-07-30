@@ -18,7 +18,8 @@ namespace DTX.DesignPatterns.Patterns.Prototype
 
         public override void Excecute()
         {
-            throw new NotImplementedException();
+            Console.WriteLine($@"{PatternNameStr}:{Environment.NewLine}");
+            ClassicPrototype.Start();
         }
 
         public override string Description()

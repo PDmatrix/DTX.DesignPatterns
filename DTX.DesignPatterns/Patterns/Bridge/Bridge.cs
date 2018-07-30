@@ -13,12 +13,12 @@ namespace DTX.DesignPatterns.Patterns.Bridge
         public Bridge(IDictionary<string, string> args)
         {
             PatternName = PatternNameStr;
-            PatternType = new CreationalPattern();
+            PatternType = new StructuralPattern();
         }
 
         public override void Excecute()
         {
-            throw new System.NotImplementedException();
+            Console.WriteLine($@"{PatternNameStr}:{Environment.NewLine}");
         }
 
         public override string Description()

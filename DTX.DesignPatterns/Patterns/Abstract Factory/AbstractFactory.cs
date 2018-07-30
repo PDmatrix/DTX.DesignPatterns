@@ -18,7 +18,8 @@ namespace DTX.DesignPatterns.Patterns.Abstract_Factory
 
         public override void Excecute()
         {
-            throw new NotImplementedException();
+            Console.WriteLine($@"{PatternNameStr}:{Environment.NewLine}");
+            ClassicAbstractFactory.Start();
         }
 
         public override string Description()

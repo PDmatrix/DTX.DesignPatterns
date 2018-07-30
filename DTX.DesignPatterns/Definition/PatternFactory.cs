@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using DTX.DesignPatterns.Extensions;
 
 namespace DTX.DesignPatterns.Definition
 {
@@ -9,15 +10,9 @@ namespace DTX.DesignPatterns.Definition
     {
         public static Pattern Create(string pattern)
         {
-            pattern = PatternNameIntoOneWord(pattern);
             var patternType = Assembly.GetExecutingAssembly().GetTypes()
-                .First(r => string.Equals(r.Name, pattern, StringComparison.CurrentCultureIgnoreCase));
+                .First(r => string.Equals(r.Name, pattern.RemoveWhiteSpace(), StringComparison.CurrentCultureIgnoreCase));
             return (Pattern)Activator.CreateInstance(patternType, new Dictionary<string, string>());
-        }
-
-        private static string PatternNameIntoOneWord(string pattern)
-        {
-            return pattern.Replace(" ", "");
         }
     }
 }

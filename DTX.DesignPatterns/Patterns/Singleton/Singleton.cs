@@ -20,20 +20,8 @@ namespace DTX.DesignPatterns.Patterns.Singleton
         public override void Excecute()
         {
             Console.WriteLine($@"{PatternNameStr}:{Environment.NewLine}");
+            ClassicSingleton.Start();
 
-            #region The First Way
-
-            Console.WriteLine(@"The first way");
-            LazySingleton.Start();
-            #endregion
-
-            #region The Second Way
-
-            Console.WriteLine($@"{Environment.NewLine}The second way");
-            AmbientContext.Start();
-            Console.WriteLine(AmbientContext.GlobalLogger.Logger);
-
-            #endregion
         }
 
         public override string Description()

@@ -3,6 +3,7 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using DTX.DesignPatterns.Definition;
+using DTX.DesignPatterns.Extensions;
 using Mono.Options;
 
 namespace DTX.DesignPatterns
@@ -45,15 +46,19 @@ namespace DTX.DesignPatterns
         private static void PrintPatterns(string patternTypeName)
         {
             var patterns = Assembly.GetExecutingAssembly().GetTypes().Where(r => r.BaseType == typeof(Pattern));
-            
-            var patternClasses = patterns.Select(r => PatternFactory.Create(r.Name))
-                .Where(r => patternTypeName == null || string.Equals(r.PatternType.GetType().Name, patternTypeName,
-                                StringComparison.CurrentCultureIgnoreCase));
 
+            var patternClasses = patterns.Select(r => PatternFactory.Create(r.Name)).ToArray();
+            if (patternTypeName != null)
+            {
+                patternClasses = patternClasses.Where(r => string.Equals(r.PatternType.GetType().Name, patternTypeName.RemoveWhiteSpace(),
+                    StringComparison.CurrentCultureIgnoreCase)).ToArray();
+
+                Console.WriteLine($@"{patternClasses.First()?.PatternType.PatternType}:");
+            }
             foreach (var patternClass in patternClasses)
             {
                 Console.WriteLine(
-                    $@"{patternClass.PatternName}");
+                    $@"{(patternTypeName !=null ? "\t" : string.Empty)}{patternClass.PatternName}");
             }
         }
     }

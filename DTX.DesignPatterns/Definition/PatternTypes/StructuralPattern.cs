@@ -2,8 +2,6 @@
 {
     public class StructuralPattern : IPatternType
     {
-        private static readonly string PatternTypeName = Properties.PatternType.StructuralPatternName;
-        
-        public string PatternType => PatternTypeName;
+        public string PatternType { get; } = Properties.PatternType.StructuralPatternName;
     }
 }

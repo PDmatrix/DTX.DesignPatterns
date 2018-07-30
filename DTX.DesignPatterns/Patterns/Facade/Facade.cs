@@ -18,7 +18,7 @@ namespace DTX.DesignPatterns.Patterns.Facade
 
         public override void Excecute()
         {
-            throw new System.NotImplementedException();
+            Console.WriteLine($@"{PatternNameStr}:{Environment.NewLine}");
         }
 
         public override string Description()

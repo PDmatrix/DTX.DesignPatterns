@@ -2,14 +2,14 @@
 
 namespace DTX.DesignPatterns.Patterns.Singleton
 {
-    public class AmbientContext
+    public static class AmbientContext
     {
         public interface ILogger
         {
             void Write();
         }
 
-        public class FileLogger : ILogger
+        private class FileLogger : ILogger
         {
             public void Write()
             {
@@ -17,7 +17,7 @@ namespace DTX.DesignPatterns.Patterns.Singleton
             }
         }
 
-        public class ConsoleLogger : ILogger
+        private class ConsoleLogger : ILogger
         {
             public void Write()
             {
