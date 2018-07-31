@@ -5,11 +5,13 @@ namespace DTX.DesignPatterns.Patterns.Factory_Method
 
     public static class ClassicFactoryMethod
     {
+        // Product
         private interface ITransport
         {
             void Move();
         }
 
+        // Concrete Product A
         private class Ship : ITransport
         {
             public void Move()
@@ -18,6 +20,7 @@ namespace DTX.DesignPatterns.Patterns.Factory_Method
             }
         }
 
+        // Concrete Product B
         private class Car : ITransport
         {
             public void Move()
@@ -26,6 +29,7 @@ namespace DTX.DesignPatterns.Patterns.Factory_Method
             }
         }
 
+        // Creator
         private abstract class Transport
         {
             public void Deliver()
@@ -37,6 +41,7 @@ namespace DTX.DesignPatterns.Patterns.Factory_Method
             protected abstract ITransport CreateTransport();
         }
 
+        // Concrete Creator A
         private class ShipCreator : Transport
         {
             protected override ITransport CreateTransport()
@@ -45,6 +50,7 @@ namespace DTX.DesignPatterns.Patterns.Factory_Method
             }
         }
 
+        // Concrete Creator B
         private class CarCreator : Transport
         {
             protected override ITransport CreateTransport()
@@ -53,6 +59,7 @@ namespace DTX.DesignPatterns.Patterns.Factory_Method
             }
         }
 
+        // Client
         public static void Start()
         {
             Transport transport = new CarCreator();

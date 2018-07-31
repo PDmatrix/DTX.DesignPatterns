@@ -69,6 +69,7 @@
     <Compile Include="Patterns\Abstract Factory\AbstractFactory.cs" />
     <Compile Include="Patterns\Abstract Factory\ClassicAbstractFactory.cs" />
     <Compile Include="Patterns\Adapter\Adapter.cs" />
+    <Compile Include="Patterns\Adapter\ClassicAdapter.cs" />
     <Compile Include="Patterns\Bridge\Bridge.cs" />
     <Compile Include="Patterns\Builder\Builder.cs" />
     <Compile Include="Patterns\Builder\ClassicBuilder.cs" />

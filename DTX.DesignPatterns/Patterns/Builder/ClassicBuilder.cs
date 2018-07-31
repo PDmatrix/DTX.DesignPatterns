@@ -4,6 +4,7 @@ namespace DTX.DesignPatterns.Patterns.Builder
 {
     public static class ClassicBuilder
     {
+        // Builder
         private interface IBuilder
         {
             void SetSalt(int gram);
@@ -11,6 +12,7 @@ namespace DTX.DesignPatterns.Patterns.Builder
             void SetPepper(int gram);
         }
 
+        // Product B
         private class Cake
         {
             private float _sweetness;
@@ -22,6 +24,7 @@ namespace DTX.DesignPatterns.Patterns.Builder
             }
         }
 
+        // Product A
         private class Soup
         {
             private float _saltiness;
@@ -40,6 +43,7 @@ namespace DTX.DesignPatterns.Patterns.Builder
             }
         }
 
+        // Concrete Builder A
         private class SoupBuilder : IBuilder
         {
             private readonly Soup _tastySoup = new Soup();
@@ -64,6 +68,7 @@ namespace DTX.DesignPatterns.Patterns.Builder
             }
         }
 
+        // Concrete Builder B
         private class CakeBuilder : IBuilder
         {
             private readonly Cake _tastyCake = new Cake();
@@ -87,6 +92,7 @@ namespace DTX.DesignPatterns.Patterns.Builder
             }
         }
 
+        // Director
         private class Director
         {
             private IBuilder _builder;
@@ -113,6 +119,7 @@ namespace DTX.DesignPatterns.Patterns.Builder
             }
         }
 
+        // Client
         public static void Start()
         {
             var cakeBuilder = new CakeBuilder();

@@ -4,11 +4,13 @@ namespace DTX.DesignPatterns.Patterns.Abstract_Factory
 {
     public static class ClassicAbstractFactory
     {
+        // Product A
         private abstract class Chair
         {
             public abstract void Sit();
         }
 
+        // Concrete Product A 1
         private class ModernChair : Chair
         {
             private static string Style => "Modern";
@@ -19,6 +21,7 @@ namespace DTX.DesignPatterns.Patterns.Abstract_Factory
             }
         }
 
+        // Concrete Product A 2
         private class ClassicChair : Chair
         {
             private static string Style => "Classic";
@@ -29,11 +32,13 @@ namespace DTX.DesignPatterns.Patterns.Abstract_Factory
             }
         }
 
+        // Product B
         private abstract class Bed
         {
             public abstract void Lay();
         }
 
+        // Concrete Product B 1
         private class ModernBed : Bed
         {
             private static string Style => "Modern";
@@ -44,6 +49,7 @@ namespace DTX.DesignPatterns.Patterns.Abstract_Factory
             }
         }
 
+        // Concrete Product B 2
         private class ClassicBed : Bed
         {
             private static string Style => "Classic";
@@ -54,44 +60,48 @@ namespace DTX.DesignPatterns.Patterns.Abstract_Factory
             }
         }
 
-        private abstract class FurnitureFactory
+        // Abstract Factory
+        private interface IFurnitureFactory
         {
-            public abstract Chair CreateChair();
-            public abstract Bed CreateBed();
+            Chair CreateChair();
+            Bed CreateBed();
         }
 
-        private class ModernFurnitureFactory : FurnitureFactory
+        // Concrete Factory A
+        private class ModernFurnitureFactory : IFurnitureFactory
         {
-            public override Chair CreateChair()
+            public Chair CreateChair()
             {
                 return new ModernChair();
             }
 
-            public override Bed CreateBed()
+            public Bed CreateBed()
             {
                 return new ModernBed();
             }
         }
 
-        private class ClassicFurnitureFactory : FurnitureFactory
+        // Concrete Factory B
+        private class ClassicFurnitureFactory : IFurnitureFactory
         {
-            public override Chair CreateChair()
+            public Chair CreateChair()
             {
                 return new ClassicChair();
             }
 
-            public override Bed CreateBed()
+            public Bed CreateBed()
             {
                 return new ClassicBed();
             }
         }
 
+        // Client
         private class Factory
         {
             private readonly Bed _bed;
             private readonly Chair _chair;
 
-            public Factory(FurnitureFactory factory)
+            public Factory(IFurnitureFactory factory)
             {
                 _bed = factory.CreateBed();
                 _chair = factory.CreateChair();

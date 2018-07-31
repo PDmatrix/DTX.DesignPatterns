@@ -4,6 +4,8 @@ namespace DTX.DesignPatterns.Patterns.Singleton
 {
     public static class ClassicSingleton
     {
+
+        // Singleton
         private sealed class Logger
         {
             private static Logger _instsance;
@@ -26,6 +28,7 @@ namespace DTX.DesignPatterns.Patterns.Singleton
             }
         }
 
+        // Client
         public static void Start()
         {
             var logger = Logger.GetInstance("File");

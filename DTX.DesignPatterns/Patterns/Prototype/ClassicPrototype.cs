@@ -4,6 +4,7 @@ namespace DTX.DesignPatterns.Patterns.Prototype
 {
     public static class ClassicPrototype
     {
+        // Prototype
         public abstract class Robot
         {
             protected int ArmsCount { get; }
@@ -19,6 +20,7 @@ namespace DTX.DesignPatterns.Patterns.Prototype
             public abstract void ShowInfo();
         }
 
+        // Concrete Prototype A
         private class FriendlyRobot : Robot
         {
             public int Softness { get; set; }
@@ -43,6 +45,7 @@ namespace DTX.DesignPatterns.Patterns.Prototype
             }
         }
 
+        // Concrete Prototype B
         private class HostileRobot : Robot
         {
             public int Aggressiveness { get; set; }
@@ -67,8 +70,7 @@ namespace DTX.DesignPatterns.Patterns.Prototype
             }
         }
 
-
-        
+        // Client
         public static void Start()
         {
             Console.WriteLine(@"Friendly Robot's Info:");

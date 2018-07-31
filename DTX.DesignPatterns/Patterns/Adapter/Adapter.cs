@@ -19,6 +19,7 @@ namespace DTX.DesignPatterns.Patterns.Adapter
         public override void Excecute()
         {
             Console.WriteLine($@"{PatternNameStr}:{Environment.NewLine}");
+            ClassicAdapter.Start();
         }
 
         public override string Description()
