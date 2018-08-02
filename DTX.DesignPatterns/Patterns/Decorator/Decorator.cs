@@ -19,6 +19,7 @@ namespace DTX.DesignPatterns.Patterns.Decorator
         public override void Excecute()
         {
             Console.WriteLine($@"{PatternNameStr}:{Environment.NewLine}");
+            ClassicDecorator.Start();
         }
 
         public override string Description()

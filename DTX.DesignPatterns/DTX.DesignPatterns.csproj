@@ -71,11 +71,14 @@
     <Compile Include="Patterns\Adapter\Adapter.cs" />
     <Compile Include="Patterns\Adapter\ClassicAdapter.cs" />
     <Compile Include="Patterns\Bridge\Bridge.cs" />
+    <Compile Include="Patterns\Bridge\ClassicBridge.cs" />
     <Compile Include="Patterns\Builder\Builder.cs" />
     <Compile Include="Patterns\Builder\ClassicBuilder.cs" />
     <Compile Include="Patterns\Chain of Responsibility\ChainOfResponsibility.cs" />
     <Compile Include="Patterns\Command\Command.cs" />
+    <Compile Include="Patterns\Composite\ClassicComposite.cs" />
     <Compile Include="Patterns\Composite\Composite.cs" />
+    <Compile Include="Patterns\Decorator\ClassicDecorator.cs" />
     <Compile Include="Patterns\Decorator\Decorator.cs" />
     <Compile Include="Patterns\Facade\Facade.cs" />
     <Compile Include="Patterns\Factory Method\ClassicFactoryMethod.cs" />

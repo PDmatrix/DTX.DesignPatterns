@@ -1,138 +1,123 @@
 ﻿using System;
+using System.Text;
 
 namespace DTX.DesignPatterns.Patterns.Builder
 {
     public static class ClassicBuilder
     {
         // Builder
-        private interface IBuilder
+        private abstract class BreadBuilder
         {
-            void SetSalt(int gram);
-            void SetSugar(int gram);
-            void SetPepper(int gram);
+            public Bread Bread { get; private set; }
+            public void CreateBread()
+            {
+                Bread = new Bread();
+            }
+            public abstract void SetFlour();
+            public abstract void SetSalt();
+            public abstract void SetAdditives();
         }
 
-        // Product B
-        private class Cake
+        // Director
+        private class Baker
         {
-            private float _sweetness;
-
-            public float Sweetnes
+            public Bread Bake(BreadBuilder breadBuilder)
             {
-                get => _sweetness;
-                set => _sweetness += value / 100f;
-            }
-        }
-
-        // Product A
-        private class Soup
-        {
-            private float _saltiness;
-            private float _spiciness;
-
-            public float Saltiness
-            {
-                get => _saltiness;
-                set => _saltiness += value / 100f;
-            }
-
-            public float Spiciness
-            {
-                get => _spiciness;
-                set => _spiciness += value / 100f;
+                breadBuilder.CreateBread();
+                breadBuilder.SetFlour();
+                breadBuilder.SetSalt();
+                breadBuilder.SetAdditives();
+                return breadBuilder.Bread;
             }
         }
 
         // Concrete Builder A
-        private class SoupBuilder : IBuilder
+        private class RyeBreadBuilder : BreadBuilder
         {
-            private readonly Soup _tastySoup = new Soup();
-
-            public void SetSalt(int gram)
+            public override void SetFlour()
             {
-                _tastySoup.Saltiness += gram;
+                Bread.Flour = new Flour { Sort = "Rye flour of the first grade" };
             }
 
-            public void SetSugar(int gram)
+            public override void SetSalt()
             {
+                Bread.Salt = new Salt() { Amount = 5 };
             }
 
-            public void SetPepper(int gram)
+            public override void SetAdditives()
             {
-                _tastySoup.Spiciness += gram;
-            }
-
-            public Soup GetResult()
-            {
-                return _tastySoup;
+                // Not used
             }
         }
 
         // Concrete Builder B
-        private class CakeBuilder : IBuilder
+        private class WheatBreadBuilder : BreadBuilder
         {
-            private readonly Cake _tastyCake = new Cake();
-
-            public void SetSalt(int gram)
+            public override void SetFlour()
             {
+                Bread.Flour = new Flour { Sort = "Wheat flour of the highest grade" };
             }
 
-            public void SetSugar(int gram)
+            public override void SetSalt()
             {
-                _tastyCake.Sweetnes += gram;
+                Bread.Salt = new Salt { Amount = 3};
             }
 
-            public void SetPepper(int gram)
+            public override void SetAdditives()
             {
-            }
-
-            public Cake GetResult()
-            {
-                return _tastyCake;
+                Bread.Additives = new Additives { Name = "Bakery improver" };
             }
         }
 
-        // Director
-        private class Director
+        private class Flour
         {
-            private IBuilder _builder;
+            public string Sort { get; set; }
+        }
 
-            public Director(IBuilder builder)
-            {
-                _builder = builder;
-            }
+        private class Salt
+        {
+            public int Amount { get; set; }
+        }
 
-            public void ChangeBuilder(IBuilder builder)
-            {
-                _builder = builder;
-            }
+        private class Additives
+        {
+            public string Name { get; set; }
+        }
 
-            public void MakeCake()
-            {
-                _builder.SetSugar(10);
-            }
+        // Product
+        private class Bread
+        {
+            public Flour Flour { get; set; }
+            public Salt Salt { get; set; }
+            public Additives Additives { get; set; }
 
-            public void MakeSoup()
+            public override string ToString()
             {
-                _builder.SetPepper(1);
-                _builder.SetSalt(2);
+                var sb = new StringBuilder();
+                sb.Append($@"Bread: {Environment.NewLine}");
+                if (Flour != null)
+                    sb.Append($@"Sort: {Flour.Sort}{Environment.NewLine}");
+                if (Salt != null)
+                    sb.Append($@"Amount of salt: {Salt.Amount} gr.{Environment.NewLine}");
+                if (Additives != null)
+                    sb.Append($@"Additives: {Additives.Name}{Environment.NewLine}");
+                return sb.ToString();
             }
         }
 
         // Client
         public static void Start()
-        {
-            var cakeBuilder = new CakeBuilder();
-            var director = new Director(cakeBuilder);
-            director.MakeCake();
+        {            
+            var baker = new Baker();
+            BreadBuilder builder = new RyeBreadBuilder();
 
-            var soupBuilder = new SoupBuilder();
-            director.ChangeBuilder(soupBuilder);
-            director.MakeSoup();
+            var ryeBread = baker.Bake(builder);
+            Console.WriteLine(ryeBread.ToString());
 
-            Console.WriteLine($@"Sweatness of the cake: {cakeBuilder.GetResult().Sweetnes}");
-            Console.WriteLine($@"Saltienss of the soup: {soupBuilder.GetResult().Saltiness}");
-            Console.WriteLine($@"Spiciness of the soup: {soupBuilder.GetResult().Spiciness}");
+            builder = new WheatBreadBuilder();
+            var wheatBread = baker.Bake(builder);
+
+            Console.WriteLine(wheatBread.ToString());
         }
     }
 }

@@ -19,6 +19,7 @@ namespace DTX.DesignPatterns.Patterns.Composite
         public override void Excecute()
         {
             Console.WriteLine($@"{PatternNameStr}:{Environment.NewLine}");
+            ClassicComposite.Start();
         }
         
         public override string Description()

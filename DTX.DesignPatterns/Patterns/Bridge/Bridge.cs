@@ -19,6 +19,7 @@ namespace DTX.DesignPatterns.Patterns.Bridge
         public override void Excecute()
         {
             Console.WriteLine($@"{PatternNameStr}:{Environment.NewLine}");
+            ClassicBridge.Start();
         }
 
         public override string Description()

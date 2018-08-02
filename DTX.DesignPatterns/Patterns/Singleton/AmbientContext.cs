@@ -4,7 +4,7 @@ namespace DTX.DesignPatterns.Patterns.Singleton
 {
     public static class AmbientContext
     {
-        public interface ILogger
+        private interface ILogger
         {
             void Write();
         }
@@ -25,7 +25,7 @@ namespace DTX.DesignPatterns.Patterns.Singleton
             }
         }
 
-        public static class GlobalLogger
+        private static class GlobalLogger
         {
             public static ILogger Logger { get; internal set; } = new ConsoleLogger();
         }
