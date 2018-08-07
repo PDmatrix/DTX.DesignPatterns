@@ -80,6 +80,7 @@
     <Compile Include="Patterns\Composite\Composite.cs" />
     <Compile Include="Patterns\Decorator\ClassicDecorator.cs" />
     <Compile Include="Patterns\Decorator\Decorator.cs" />
+    <Compile Include="Patterns\Facade\ClassicFacade.cs" />
     <Compile Include="Patterns\Facade\Facade.cs" />
     <Compile Include="Patterns\Factory Method\ClassicFactoryMethod.cs" />
     <Compile Include="Patterns\Factory Method\FactoryMethod.cs" />
@@ -133,6 +134,7 @@
     <EmbeddedResource Include="Properties\PatternName.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>PatternName.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\PatternType.ru.resx" />
     <EmbeddedResource Include="Properties\PatternType.resx">
@@ -153,5 +155,30 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Content Include="UML Diagrams\AbstractFactory.svg" />
+    <Content Include="UML Diagrams\Adapter.svg" />
+    <Content Include="UML Diagrams\Bridge.svg" />
+    <Content Include="UML Diagrams\Builder.svg" />
+    <Content Include="UML Diagrams\ChainOfResponsibility.svg" />
+    <Content Include="UML Diagrams\Command.svg" />
+    <Content Include="UML Diagrams\Composite.svg" />
+    <Content Include="UML Diagrams\Decorator.svg" />
+    <Content Include="UML Diagrams\Facade.svg" />
+    <Content Include="UML Diagrams\FactoryMethod.svg" />
+    <Content Include="UML Diagrams\Flyweight.svg" />
+    <Content Include="UML Diagrams\Interpreter.svg" />
+    <Content Include="UML Diagrams\Iterator.svg" />
+    <Content Include="UML Diagrams\Mediator.svg" />
+    <Content Include="UML Diagrams\Memento.svg" />
+    <Content Include="UML Diagrams\Observer.svg" />
+    <Content Include="UML Diagrams\Prototype.svg" />
+    <Content Include="UML Diagrams\Proxy.svg" />
+    <Content Include="UML Diagrams\Singleton.svg" />
+    <Content Include="UML Diagrams\State.svg" />
+    <Content Include="UML Diagrams\Strategy.svg" />
+    <Content Include="UML Diagrams\TemplateMethod.svg" />
+    <Content Include="UML Diagrams\Visitor.svg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

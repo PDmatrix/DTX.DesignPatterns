@@ -19,6 +19,7 @@ namespace DTX.DesignPatterns.Patterns.Facade
         public override void Excecute()
         {
             Console.WriteLine($@"{PatternNameStr}:{Environment.NewLine}");
+            ClassicFacade.Start();
         }
 
         public override string Description()
