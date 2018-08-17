@@ -19,6 +19,7 @@ namespace DTX.DesignPatterns.Patterns.Flyweight
         public override void Excecute()
         {
             Console.WriteLine($@"{PatternNameStr}:{Environment.NewLine}");
+            ClassicFlyweight.Start();
         }
 
         public override string Description()

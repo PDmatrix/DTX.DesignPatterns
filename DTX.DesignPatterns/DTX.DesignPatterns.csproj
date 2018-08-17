@@ -86,6 +86,7 @@
     <Compile Include="Patterns\Factory Method\FactoryMethod.cs" />
     <Compile Include="Definition\Pattern.cs" />
     <Compile Include="Definition\PatternFactory.cs" />
+    <Compile Include="Patterns\Flyweight\ClassicFlyweight.cs" />
     <Compile Include="Patterns\Flyweight\Flyweight.cs" />
     <Compile Include="Patterns\Interpreter\Interpreter.cs" />
     <Compile Include="Patterns\Iterator\Iterator.cs" />
