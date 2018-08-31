@@ -19,6 +19,7 @@ namespace DTX.DesignPatterns.Patterns.Proxy
         public override void Excecute()
         {
             Console.WriteLine($@"{PatternNameStr}:{Environment.NewLine}");
+            ClassicProxy.Start();
         }
 
         public override string Description()

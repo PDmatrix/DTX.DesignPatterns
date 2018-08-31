@@ -19,6 +19,7 @@ namespace DTX.DesignPatterns.Patterns.Command
         public override void Excecute()
         {
             Console.WriteLine($@"{PatternNameStr}:{Environment.NewLine}");
+            ClassicCommand.Start();
         }
 
         public override string Description()

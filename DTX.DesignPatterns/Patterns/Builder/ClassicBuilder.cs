@@ -19,9 +19,9 @@ namespace DTX.DesignPatterns.Patterns.Builder
         }
 
         // Director
-        private class Baker
+        private static class Baker
         {
-            public Bread Bake(BreadBuilder breadBuilder)
+            public static Bread Bake(BreadBuilder breadBuilder)
             {
                 breadBuilder.CreateBread();
                 breadBuilder.SetFlour();
@@ -41,7 +41,7 @@ namespace DTX.DesignPatterns.Patterns.Builder
 
             public override void SetSalt()
             {
-                Bread.Salt = new Salt() { Amount = 5 };
+                Bread.Salt = new Salt { Amount = 5 };
             }
 
             public override void SetAdditives()
@@ -87,20 +87,27 @@ namespace DTX.DesignPatterns.Patterns.Builder
         // Product
         private class Bread
         {
-            public Flour Flour { get; set; }
-            public Salt Salt { get; set; }
-            public Additives Additives { get; set; }
+            public Flour Flour { private get; set; }
+            public Salt Salt { private get; set; }
+            public Additives Additives { private get; set; }
 
             public override string ToString()
             {
                 var sb = new StringBuilder();
                 sb.Append($@"Bread: {Environment.NewLine}");
                 if (Flour != null)
+                {
                     sb.Append($@"Sort: {Flour.Sort}{Environment.NewLine}");
+                }
                 if (Salt != null)
+                {
                     sb.Append($@"Amount of salt: {Salt.Amount} gr.{Environment.NewLine}");
+                }
                 if (Additives != null)
+                {
                     sb.Append($@"Additives: {Additives.Name}{Environment.NewLine}");
+                }
+
                 return sb.ToString();
             }
         }
@@ -108,14 +115,13 @@ namespace DTX.DesignPatterns.Patterns.Builder
         // Client
         public static void Start()
         {            
-            var baker = new Baker();
             BreadBuilder builder = new RyeBreadBuilder();
 
-            var ryeBread = baker.Bake(builder);
+            var ryeBread = Baker.Bake(builder);
             Console.WriteLine(ryeBread.ToString());
 
             builder = new WheatBreadBuilder();
-            var wheatBread = baker.Bake(builder);
+            var wheatBread = Baker.Bake(builder);
 
             Console.WriteLine(wheatBread.ToString());
         }

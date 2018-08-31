@@ -19,6 +19,7 @@ namespace DTX.DesignPatterns.Patterns.Iterator
         public override void Excecute()
         {
             Console.WriteLine($@"{PatternNameStr}:{Environment.NewLine}");
+            ClassicIterator.Start();
         }
 
         public override string Description()

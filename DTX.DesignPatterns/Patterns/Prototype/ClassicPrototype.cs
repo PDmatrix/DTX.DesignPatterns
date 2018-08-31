@@ -23,7 +23,7 @@ namespace DTX.DesignPatterns.Patterns.Prototype
         // Concrete Prototype A
         private class FriendlyRobot : Robot
         {
-            public int Softness { get; set; }
+            public int Softness { private get; set; }
 
             public FriendlyRobot(int arms, int legs) : base(arms, legs)
             {
@@ -80,7 +80,10 @@ namespace DTX.DesignPatterns.Patterns.Prototype
 
             Console.WriteLine(@"Friendly Robot copy Info:");
             if (friendlyRobot.Clone() is FriendlyRobot friendlyRobotCopy)
+            {
                 friendlyRobotCopy.ShowInfo();
+            }
+
             Console.WriteLine();
 
             Console.WriteLine(@"Hostile Robot's Info:");
@@ -90,7 +93,9 @@ namespace DTX.DesignPatterns.Patterns.Prototype
 
             Console.WriteLine(@"Hostile Robot copy Info:");
             if (hostileRobot.Clone() is HostileRobot hostileRobotCopy)
+            {
                 hostileRobotCopy.ShowInfo();
+            }
         }
     }
 }

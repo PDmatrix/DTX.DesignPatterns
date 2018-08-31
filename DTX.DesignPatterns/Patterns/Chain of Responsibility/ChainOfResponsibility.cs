@@ -19,6 +19,7 @@ namespace DTX.DesignPatterns.Patterns.Chain_of_Responsibility
         public override void Excecute()
         {
             Console.WriteLine($@"{PatternNameStr}:{Environment.NewLine}");
+            ClassicChainOfResponsibility.Start();
         }
 
         public override string Description()

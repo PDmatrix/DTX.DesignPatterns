@@ -75,6 +75,8 @@
     <Compile Include="Patterns\Builder\Builder.cs" />
     <Compile Include="Patterns\Builder\ClassicBuilder.cs" />
     <Compile Include="Patterns\Chain of Responsibility\ChainOfResponsibility.cs" />
+    <Compile Include="Patterns\Chain of Responsibility\ClassicChainOfResponsibility.cs" />
+    <Compile Include="Patterns\Command\ClassicCommand.cs" />
     <Compile Include="Patterns\Command\Command.cs" />
     <Compile Include="Patterns\Composite\ClassicComposite.cs" />
     <Compile Include="Patterns\Composite\Composite.cs" />
@@ -89,12 +91,14 @@
     <Compile Include="Patterns\Flyweight\ClassicFlyweight.cs" />
     <Compile Include="Patterns\Flyweight\Flyweight.cs" />
     <Compile Include="Patterns\Interpreter\Interpreter.cs" />
+    <Compile Include="Patterns\Iterator\ClassicIterator.cs" />
     <Compile Include="Patterns\Iterator\Iterator.cs" />
     <Compile Include="Patterns\Mediator\Mediator.cs" />
     <Compile Include="Patterns\Memento\Memento.cs" />
     <Compile Include="Patterns\Observer\Observer.cs" />
     <Compile Include="Patterns\Prototype\ClassicPrototype.cs" />
     <Compile Include="Patterns\Prototype\Prototype.cs" />
+    <Compile Include="Patterns\Proxy\ClassicProxy.cs" />
     <Compile Include="Patterns\Proxy\Proxy.cs" />
     <Compile Include="Patterns\Singleton\AmbientContext.cs" />
     <Compile Include="Patterns\Singleton\ClassicSingleton.cs" />
